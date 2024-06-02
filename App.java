@@ -39,10 +39,10 @@ public class App {
             System.out.println("Montant invalide. Veuillez saisir un nombre positif inférieur ou égal à votre solde.");
             return;
         }
-        System.out.printf("Le montant de %.2f a été retiré du compte%n",amount);
+        System.out.printf("Le montant de %.2f € a été retiré du compte%n", amount);
         balance -= amount;
         String formattedDateTime = getCurrentDateTime();
-        transactionHistory.add("Retiré : " + amount + "€ Date : " + formattedDateTime);
+        transactionHistory.add("Retiré : " + amount + " € Date : " + formattedDateTime);
     }
 
     public void showAccountBalance() {
@@ -77,12 +77,12 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Entrez le montant à déposer (€) ");
+                    System.out.print("Entrez le montant à déposer (€) : ");
                     double depositAmount = scanner.nextDouble();
                     account.deposit(depositAmount);
                     break;
                 case 2:
-                    System.out.print("Entrez le montant à retirer (€) ");
+                    System.out.print("Entrez le montant à retirer (€) : ");
                     double withrdrawAmount = scanner.nextDouble();
                     account.withdraw(withrdrawAmount);
                     break;
