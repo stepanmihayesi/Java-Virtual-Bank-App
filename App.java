@@ -6,55 +6,61 @@ import java.util.Scanner;
 public class App {
     private double balance;
     private final ArrayList<String> transactionHistory;
+
     public App() {
         this.balance = 0.0;
         this.transactionHistory = new ArrayList<>();
     }
+
     private String getCurrentDateTime() {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return now.format(formatter);
     }
+
     public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            String formattedDateTime = getCurrentDateTime();
-            transactionHistory.add("Déposé : " + amount + " € Date : " + formattedDateTime);
-            System.out.println("Deposé " + amount+" €");
-        } else {
+        if (amount <= 0) {
             System.out.println("Montant invalide. Veuillez saisir un nombre positif.");
+            return;
         }
+
+        balance += amount;
+        String formattedDateTime = getCurrentDateTime();
+        transactionHistory.add("Déposé : " + amount + " € Date : " + formattedDateTime);
+        System.out.println("Déposé " + amount + " €");
     }
+
     public void withdraw(double amount) {
-        if(amount > 0) {
-            if(amount <= balance) {
-                System.out.printf("Le montant de %.2f a été retiré du compte%n",amount);
-                balance -= amount;
-                String formattedDateTime = getCurrentDateTime();
-                transactionHistory.add("Retiré : " + amount + "€ Date : " + formattedDateTime);
-            }
-        }
-        else {
+        if(amount > balance) {
             System.out.println("Le solde négatif ne peut pas être retiré.");
+            return;
         }
+        System.out.printf("Le montant de %.2f a été retiré du compte%n",amount);
+        balance -= amount;
+        String formattedDateTime = getCurrentDateTime();
+        transactionHistory.add("Retiré : " + amount + "€ Date : " + formattedDateTime);
     }
+
     public void showAccountBalance() {
         System.out.println("Le solde actuel est de "+ balance+" €");
     }
+
     public void showTransactionHistory() {
         if (transactionHistory.isEmpty()) {
             System.out.println("Aucune transaction à afficher.");
-        } else {
-            System.out.println("Historique des transactions :");
-            for (String transaction : transactionHistory) {
-                System.out.println(transaction);
-            }
+            return;
+        }
+        System.out.println("Historique des transactions :");
+        for (String transaction : transactionHistory) {
+            System.out.println(transaction);
         }
     }
+
     public static void main(String[] args) {
         App account = new App();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
+
         while (!exit) {
             System.out.println("\nBienvenue sur l'application La banque virtuelle");
             System.out.println("1. Déposer de l'argent");
@@ -64,6 +70,7 @@ public class App {
             System.out.println("5. Quitter l'application");
             System.out.print("Choisissez une option : ");
             int choice = scanner.nextInt();
+
             switch (choice) {
                 case 1:
                     System.out.print("Entrez le montant à déposer (€) ");
@@ -89,6 +96,7 @@ public class App {
                     System.out.println("Choix invalide. Veuillez réessayer.");
             }
         }
+
         scanner.close();
     }
 }
