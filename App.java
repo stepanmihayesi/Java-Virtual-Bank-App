@@ -31,8 +31,12 @@ public class App {
     }
 
     public void withdraw(double amount) {
-        if(amount > balance) {
+        if (amount <= 0) {
             System.out.println("Le solde négatif ne peut pas être retiré.");
+            return;
+        }
+        if (amount > balance) {
+            System.out.println("Montant invalide. Veuillez saisir un nombre positif inférieur ou égal à votre solde.");
             return;
         }
         System.out.printf("Le montant de %.2f a été retiré du compte%n",amount);
