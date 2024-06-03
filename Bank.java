@@ -3,7 +3,7 @@ package com.acadefix;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Bank {
+public class Bank implements IBank {
     private final Map<String, Account> accounts;
 
     /**

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class Account {
+public class Account implements IAccount {
     private double balance;
     private final ArrayList<String> transactionHistory;
     private final String accountId;
