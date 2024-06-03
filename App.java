@@ -8,7 +8,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
-            System.out.println("\nBienvenue sur l'application La banque virtuelle");
+            System.out.println("\nBienvenue dans l'application La banque virtuelle");
             System.out.println("1. Liste des comptes");
             System.out.println("2. Créer un nouveau compte");
             System.out.println("3. Déposer de l'argent");

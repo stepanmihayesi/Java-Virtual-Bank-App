@@ -6,14 +6,18 @@
 
 - Ceci est une application JAVA qui fonctionne en ligne de commande. Elle affiche un menu avec des options
 
-1. Crer un nouveau compte
-2. Dposer de l'argent
-3. Retirer de l'argent
-4. Consulter le solde du compte
-5. Afficher l'historique des transactions
-6. Transfrer de l'argent
-7. Quitter l'application
-   à sélectionner pour les différentes actions.
+Bienvenue dans l'application La banque virtuelle
+
+1. Liste des comptes
+2. Créer un nouveau compte
+3. Déposer de l'argent
+4. Retirer de l'argent
+5. Consulter le solde du compte
+6. Afficher l'historique des transactions
+7. Transférer de l'argent
+8. Quitter l'application
+
+à sélectionner pour les différentes actions.
 
 - Pour la faire marcher, il faut copier coller le code dans un projet JAVA et faire la commande :
 
