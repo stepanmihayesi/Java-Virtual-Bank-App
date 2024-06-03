@@ -75,7 +75,11 @@ public class App {
                     String toAccountId = scanner.next();
                     System.out.print("Entrez le montant à transférer (€) : ");
                     double transferAmount = scanner.nextDouble();
-                    bank.transfer(fromAccountId, toAccountId, transferAmount);
+                    try {
+                        bank.transfer(fromAccountId, toAccountId, transferAmount);
+                    } catch (Exception e ) {
+                        System.out.println("Une exception s'est produite. Voici son message : "+e);
+                    }
                     break;
                 case 7:
                     exit = true;
