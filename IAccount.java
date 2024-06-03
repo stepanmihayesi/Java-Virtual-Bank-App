@@ -26,4 +26,5 @@ public interface IAccount {
      * @param transaction
      */
     void addTransaction(String transaction);
+    public String toString();
 }

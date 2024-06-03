@@ -56,4 +56,15 @@ public class Bank implements IBank {
         toAccount.addTransaction(transaction);
         System.out.println(transaction);
     }
+    public void listUserAccounts() {
+        if (accounts.isEmpty()) {
+            System.out.println("Aucun compte n'a été trouvé.");
+            return;
+        }
+
+        System.out.println("Voici la liste des comptes et leur solde :");
+        for (Account account : accounts.values()) {
+            System.out.println(account.toString()); // Explicitly call the toString method
+        }
+    }
 }

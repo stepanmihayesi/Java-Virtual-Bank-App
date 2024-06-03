@@ -102,4 +102,9 @@ public class Account implements IAccount {
     public String getAccountId() {
         return accountId;
     }
+
+    @Override
+    public String toString() {
+        return "Numéro du compte : " + accountId + ", solde : " + balance + " €";
+    }
 }
